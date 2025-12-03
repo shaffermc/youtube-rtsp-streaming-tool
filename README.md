@@ -17,6 +17,7 @@ Quick Start:
 
 
 Run the Program:
+
     To run the program type "python3 main.py"
     It may be necessary to install a few dependencies. Simply use PIP or apt to install them. 
     Installing the dependencies is only necessary the first time the program is run. 
