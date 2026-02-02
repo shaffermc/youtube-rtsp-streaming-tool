@@ -1,23 +1,43 @@
+# YouTube RTSP Streaming Tool
 
-# YouTube RTSP Streaming Tool - Setup & Usage Guide
+A lightweight Python utility for maintaining stable RTSP streams to YouTube Live.
+This tool is designed to help keep long-running RTSP streams reliable by monitoring bandwidth usage and automatically restarting streams when issues are detected.
 
-A simple tool designed to maintain RTSP streams to the YouTube Live servers.
+## Features
+Monitors bandwidth usage for each active stream
+Automatically restarts streams if performance drops or disconnects occur
+Written in Python
+Designed for Ubuntu/Linux (should work on most Linux distributions)
+Simple configuration with only a few required settings
 
-Features:
+## Quick Start
+1. Clone the Repository
+git clone https://github.com/yourusername/yourrepo.git
+cd yourrepo
 
-    Monitors the bandwidth used by each stream and restarts if necessary.
-    Uses Python and runs on Ubuntu and likely other Linux versions.
-    Easy to set up - just requires editing a few variables in the config file. 
+2. Configure the Program
+Open the template configuration file:
+nano config.template.json
 
-Quick Start:
+Update the following variables for your setup:
+ip — IP address of your RTSP source
+stream_key — YouTube Live stream key
+program_location — Path to your streaming executable (ffmpeg, etc.)
+Save the file as:
+config.json
 
-    Open the config.template.json file in a text editor. 
-    Edit the ip, stream_key, and program_location variables for your specific setup.
-    Save the file as config.json and exit the editor.
+## Running the Program
+Start the tool with:
+python3 main.py
 
+## Dependencies
+Some dependencies may need to be installed the first time you run the program.
+You can install Python packages with:
+pip install -r requirements.txt
+Or install system packages using:
+sudo apt install <package-name>
+(Only needed once.)
 
-Run the Program:
-
-    To run the program type "python3 main.py"
-    It may be necessary to install a few dependencies. Simply use PIP or apt to install them. 
-    Installing the dependencies is only necessary the first time the program is run. 
+## Notes
+This tool is intended for long-duration YouTube Live RTSP streaming setups.
+Ideal for monitoring unattended streams and reducing downtime.
